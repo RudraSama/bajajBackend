@@ -115,6 +115,11 @@ const process_b64 = (file_b64)=>{
     }
 }
 
+
+router.get("/", (req, res)=>{
+    res.send("Welcome to backend API");
+});
+
 router.get("/bfhl", (req, res)=>{
     res.status(200).json({"operation_code": 1});
 });
