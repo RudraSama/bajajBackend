@@ -18,6 +18,20 @@ const response_obj = {
     "file_size_kb": "0"
 }
 
+
+const responseObjReset = ()=>{
+    response_obj["numbers"] = [];
+    response_obj["highest_lowercase_alphabet"] = [];
+    response_obj["is_prime_found"] = false;
+    response_obj["numbers"] = [],
+    response_obj["alphabets"] = [],
+    response_obj["file_valid"] = false;
+    response_obj["file_valid"] = false;
+    response_obj["file_mime_type"] = "";
+    response_obj["file_size_kb"] = "0";
+}
+
+
 const isPrime = (num)=>{
     if(num <= 1){
         return false;
@@ -125,6 +139,7 @@ router.get("/bfhl", (req, res)=>{
 });
 
 router.post("/bfhl", (req, res)=>{
+    responseObjReset();
     const data = req.body.data;
     const file_b64 = req.body.file_b64;
 
